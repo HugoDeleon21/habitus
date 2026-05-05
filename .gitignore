@@ -1,0 +1,24 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Visual Studio Code
+.vscode/
+
+# Node / Frontend
+node_modules/
+
+# Configurações sensíveis
+.env
+appsettings.Development.json
+
+# Banco local, caso algum arquivo seja criado
+*.db
+*.sqlite
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
