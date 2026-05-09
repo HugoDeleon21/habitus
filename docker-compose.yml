@@ -1,0 +1,16 @@
+services:
+  habitus-db:
+    image: postgres:16
+    container_name: habitus_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: habitus_db
+      POSTGRES_USER: habitus_user
+      POSTGRES_PASSWORD: habitus_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - habitus_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  habitus_postgres_data:
