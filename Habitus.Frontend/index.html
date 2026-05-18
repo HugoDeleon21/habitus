@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitus - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <main class="auth-shell">
+        <section class="brand-panel">
+            <p class="eyebrow">Habitus</p>
+            <h1>Rastreie seus hábitos com clareza.</h1>
+            <p class="muted">
+                Entre na sua conta ou crie um cadastro simples para organizar os hábitos do dia.
+            </p>
+        </section>
+
+        <section class="auth-grid" aria-label="Acesso ao sistema">
+            <form id="loginForm" class="panel form-panel">
+                <div class="section-heading">
+                    <h2>Entrar</h2>
+                    <p>Acesse seu dashboard.</p>
+                </div>
+
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" name="email" type="email" autocomplete="email" required>
+
+                <label for="loginSenha">Senha</label>
+                <input id="loginSenha" name="senha" type="password" autocomplete="current-password" required>
+
+                <button type="submit">Entrar</button>
+                <p id="loginMessage" class="message" role="status"></p>
+            </form>
+
+            <form id="registerForm" class="panel form-panel">
+                <div class="section-heading">
+                    <h2>Cadastrar</h2>
+                    <p>Crie uma conta para começar.</p>
+                </div>
+
+                <label for="registerNome">Nome</label>
+                <input id="registerNome" name="nome" type="text" autocomplete="name" required>
+
+                <label for="registerEmail">Email</label>
+                <input id="registerEmail" name="email" type="email" autocomplete="email" required>
+
+                <label for="registerSenha">Senha</label>
+                <input id="registerSenha" name="senha" type="password" autocomplete="new-password" required>
+
+                <button type="submit" class="secondary-button">Cadastrar</button>
+                <p id="registerMessage" class="message" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

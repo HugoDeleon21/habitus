@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitus - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">Dashboard</p>
+            <h1>Olá, <span id="userName">usuário</span></h1>
+        </div>
+        <button id="logoutButton" class="ghost-button" type="button">Sair</button>
+    </header>
+
+    <main class="dashboard-shell">
+        <section class="metrics-grid" aria-label="Métricas do dia">
+            <article class="metric-card">
+                <span>Total de hábitos</span>
+                <strong id="totalHabitos">0</strong>
+            </article>
+            <article class="metric-card">
+                <span>Concluídos</span>
+                <strong id="habitosConcluidos">0</strong>
+            </article>
+            <article class="metric-card">
+                <span>Taxa de conclusão</span>
+                <strong id="taxaConclusao">0%</strong>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <form id="habitForm" class="panel form-panel">
+                <div class="section-heading">
+                    <h2 id="habitFormTitle">Novo hábito</h2>
+                    <p>Defina um hábito para uma data específica.</p>
+                </div>
+
+                <input id="habitId" type="hidden">
+
+                <label for="habitNome">Nome</label>
+                <input id="habitNome" name="nome" type="text" required>
+
+                <label for="habitDescricao">Descrição</label>
+                <textarea id="habitDescricao" name="descricao" rows="4" required></textarea>
+
+                <label for="habitData">Data</label>
+                <input id="habitData" name="data" type="date" required>
+
+                <div class="button-row">
+                    <button id="saveHabitButton" type="submit">Salvar</button>
+                    <button id="cancelEditButton" class="ghost-button hidden" type="button">Cancelar</button>
+                </div>
+
+                <p id="habitMessage" class="message" role="status"></p>
+            </form>
+
+            <section class="panel habits-panel">
+                <div class="section-heading row-heading">
+                    <div>
+                        <h2>Meus hábitos</h2>
+                        <p>Itens vinculados ao usuário logado.</p>
+                    </div>
+                    <button id="refreshButton" class="ghost-button" type="button">Atualizar</button>
+                </div>
+
+                <div id="habitsList" class="habits-list" aria-live="polite"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
