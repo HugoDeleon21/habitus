@@ -1,3 +1,4 @@
+using Habitus.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Habitus.Api.Data
@@ -7,5 +8,9 @@ namespace Habitus.Api.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
+
+        public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<Habito> Habitos { get; set; }
     }
 }
