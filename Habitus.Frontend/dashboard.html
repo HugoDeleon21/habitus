@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="topbar">
+    <header class="topbar dashboard-hero">
         <div>
             <p class="eyebrow">Dashboard</p>
-            <h1>Olá, <span id="userName">usuário</span></h1>
+            <h1>Olá, <span id="userName">usuário</span> <span aria-hidden="true">👋</span></h1>
+            <p class="dashboard-subtitle">Organize seus hábitos e acompanhe seu progresso diário.</p>
         </div>
         <button id="logoutButton" class="ghost-button" type="button">Sair</button>
     </header>
@@ -18,24 +19,27 @@
     <main class="dashboard-shell">
         <section class="metrics-grid" aria-label="Métricas do dia">
             <article class="metric-card">
-                <span>Total de hábitos</span>
+                <span>Hábitos de hoje</span>
                 <strong id="totalHabitos">0</strong>
             </article>
             <article class="metric-card">
-                <span>Concluídos</span>
+                <span>Concluídos hoje</span>
                 <strong id="habitosConcluidos">0</strong>
             </article>
             <article class="metric-card">
-                <span>Taxa de conclusão</span>
+                <span>Progresso diário</span>
                 <strong id="taxaConclusao">0%</strong>
+                <div class="metric-progress" aria-hidden="true">
+                    <span id="metricProgressBar"></span>
+                </div>
             </article>
         </section>
 
         <section class="content-grid">
             <form id="habitForm" class="panel form-panel">
                 <div class="section-heading">
-                    <h2 id="habitFormTitle">Novo hábito</h2>
-                    <p>Defina um hábito para uma data específica.</p>
+                    <h2 id="habitFormTitle">Cadastrar hábito</h2>
+                    <p>Adicione uma atividade para acompanhar sua rotina.</p>
                 </div>
 
                 <input id="habitId" type="hidden">
@@ -50,7 +54,7 @@
                 <input id="habitData" name="data" type="date" required>
 
                 <div class="button-row">
-                    <button id="saveHabitButton" type="submit">Salvar</button>
+                    <button id="saveHabitButton" type="submit">Salvar hábito</button>
                     <button id="cancelEditButton" class="ghost-button hidden" type="button">Cancelar</button>
                 </div>
 
@@ -61,7 +65,7 @@
                 <div class="section-heading row-heading">
                     <div>
                         <h2>Meus hábitos</h2>
-                        <p>Itens vinculados ao usuário logado.</p>
+                        <p>Veja, edite e conclua as atividades da sua rotina.</p>
                     </div>
                     <button id="refreshButton" class="ghost-button" type="button">Atualizar</button>
                 </div>
